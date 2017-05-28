@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -85,8 +86,6 @@ public class ConvertFragment extends Fragment implements ConvertView, View.OnCli
     public void openCurrencyList(int requestCode) {
         Intent intent = new Intent(getContext(), CurrencyListActivity.class);
         startActivityForResult(intent, requestCode);
-
-        //mActivity.openCurrencyList(currentCurrency, tag);
     }
 
     @Override
@@ -104,7 +103,8 @@ public class ConvertFragment extends Fragment implements ConvertView, View.OnCli
 
     @Override
     public void onShowError(int res) {
-
+        Snackbar.make(getView(), getString(res), Snackbar.LENGTH_LONG)
+                .show();
     }
 
     @Override

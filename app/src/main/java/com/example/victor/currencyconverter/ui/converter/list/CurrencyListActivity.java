@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 
 import com.example.victor.currencyconverter.R;
 import com.example.victor.currencyconverter.ui.base.Injection;
@@ -35,6 +36,11 @@ public class CurrencyListActivity extends AppCompatActivity implements CurrencyL
         new CurrencyListPresenter(fragment,
                 Injection.provideTasksRepository(getApplicationContext()),
                 Injection.providePreferencesUtils(getApplicationContext()));
+
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setTitle(R.string.activity_currency_list_title);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
     }
 
     @Override
@@ -44,4 +50,15 @@ public class CurrencyListActivity extends AppCompatActivity implements CurrencyL
         setResult(RESULT_OK, result);
         finish();
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                setResult(RESULT_CANCELED);
+                break;
+        }
+        return true;
+    }
+
 }

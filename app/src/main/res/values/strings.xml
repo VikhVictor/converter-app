@@ -14,4 +14,8 @@
     <string name="activity_currency_list_search_title">Введите название валюты</string>
     <string name="dialog_loading_error_positive_btn">Повторить</string>
     <string name="dialog_loading_error_negatitive_btn">Продолжить</string>
+    <string name="activity_converter_currency_not_selected">Не выбрана валюта для конвертации</string>
+    <string name="activity_currency_list_title">Выбор валюты</string>
+    <string name="activity_converter_title">Конвертер</string>
+    <string name="activity_converter_amount_not_entered">Не введено количество валюты</string>
 </resources>

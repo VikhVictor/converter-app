@@ -46,6 +46,7 @@ public class SplashScreenActivity extends AppCompatActivity implements SplashScr
                             mPresenter.continueWithoutData();
                         }
                     })
+                    .setCancelable(false)
                     .create();
         }
         mErrorDialog.show();

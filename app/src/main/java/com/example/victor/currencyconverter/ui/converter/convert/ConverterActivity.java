@@ -22,6 +22,10 @@ public class ConverterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_converter);
 
         attachConvertFragment();
+
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setTitle(R.string.activity_converter_title);
+        }
     }
 
     private void attachConvertFragment() {

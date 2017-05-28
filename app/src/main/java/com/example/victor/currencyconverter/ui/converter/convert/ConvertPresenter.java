@@ -42,8 +42,15 @@ public class ConvertPresenter {
     public void onConvertClick(String input) {
 
         if (input.length() == 0) {
+            mView.onShowError(R.string.activity_converter_amount_not_entered);
             return;
         }
+
+        if (mCurrencyFrom == null || mCurrencyTo == null) {
+            mView.onShowError(R.string.activity_converter_currency_not_selected);
+            return;
+        }
+
         mView.setResult(convertValue(input));
     }
 
@@ -60,8 +67,8 @@ public class ConvertPresenter {
 
     public void onStart() {
 
-        int fromId = mPrefUtils.getPrefs().getInt(mPrefUtils.getString(R.string.key_save_currency_id_from), 24);
-        int toId = mPrefUtils.getPrefs().getInt(mPrefUtils.getString(R.string.key_save_currency_id_to), 10);
+        int fromId = mPrefUtils.getPrefs().getInt(mPrefUtils.getString(R.string.key_save_currency_id_from), 0);
+        int toId = mPrefUtils.getPrefs().getInt(mPrefUtils.getString(R.string.key_save_currency_id_to), 0);
 
         mCurrencyFrom = mDBHelper.getCurrencyById(fromId);
         mCurrencyTo = mDBHelper.getCurrencyById(toId);
@@ -104,6 +111,11 @@ public class ConvertPresenter {
     }
 
     public void onSwapClick(String input) {
+        if (mCurrencyFrom == null || mCurrencyTo == null) {
+            mView.onShowError(R.string.activity_converter_currency_not_selected);
+            return;
+        }
+
         CurrencyModel tmp = mCurrencyFrom;
         mCurrencyFrom = new CurrencyModel(mCurrencyTo);
         mCurrencyTo = tmp;

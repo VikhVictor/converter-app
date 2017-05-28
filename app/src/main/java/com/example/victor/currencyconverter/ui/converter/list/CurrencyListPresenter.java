@@ -34,16 +34,12 @@ public class CurrencyListPresenter {
     public void onStart() {
         mCurrencyList = mDBHelper.getCurrencyList();
 
-        //mPreferences.getInt(R.string.key_setting_currency_from, -1);
-        //mPreferences.getInt(R.string.key_setting_currency_to, -1);
-
         if (mCurrencyList.size() == 0) {
             mView.onShowError(R.string.activity_converter_none_currencies);
             return;
         }
 
         mView.onDataLoaded(new ArrayList<>(mCurrencyList));
-
     }
 
     public void onItemClick(int position) {
