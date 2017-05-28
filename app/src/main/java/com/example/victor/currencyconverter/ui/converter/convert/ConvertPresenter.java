@@ -67,8 +67,8 @@ public class ConvertPresenter {
 
     public void onStart() {
 
-        int fromId = mPrefUtils.getPrefs().getInt(mPrefUtils.getString(R.string.key_save_currency_id_from), 0);
-        int toId = mPrefUtils.getPrefs().getInt(mPrefUtils.getString(R.string.key_save_currency_id_to), 0);
+        int fromId = mPrefUtils.getPrefs().getInt(mPrefUtils.getString(R.string.key_save_currency_id_from), 1);
+        int toId = mPrefUtils.getPrefs().getInt(mPrefUtils.getString(R.string.key_save_currency_id_to), 1);
 
         mCurrencyFrom = mDBHelper.getCurrencyById(fromId);
         mCurrencyTo = mDBHelper.getCurrencyById(toId);

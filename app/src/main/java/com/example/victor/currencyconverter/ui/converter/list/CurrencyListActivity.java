@@ -56,6 +56,7 @@ public class CurrencyListActivity extends AppCompatActivity implements CurrencyL
         switch (item.getItemId()) {
             case android.R.id.home:
                 setResult(RESULT_CANCELED);
+                finish();
                 break;
         }
         return true;

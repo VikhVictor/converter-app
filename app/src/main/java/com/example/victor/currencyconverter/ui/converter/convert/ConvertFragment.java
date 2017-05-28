@@ -93,7 +93,6 @@ public class ConvertFragment extends Fragment implements ConvertView, View.OnCli
         mTVCurrencyTo.setText(to);
         mTVCurrencyFrom.setText(from);
         mETInput.setHint(from);
-        mTVResult.setText("");
     }
 
     @Override
