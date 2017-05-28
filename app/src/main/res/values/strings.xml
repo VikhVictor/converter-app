@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">CurrencyConverter</string>
+    <string name="activity_converter_none_currencies">Нет данных для конвертирования валют</string>
+    <string name="key_setting_currency_from">currency_from</string>
+    <string name="key_setting_currency_to">currency_to</string>
+    <string name="key_settings">key_settings</string>
+    <string name="key_save_currency_id_from">currency_id_from</string>
+    <string name="key_save_currency_id_to">currency_id_to</string>
+    <string name="error_failed_data_update">Не удалось обновить данные</string>
+    <string name="activity_converter_convert_button">Конвертировать</string>
+    <string name="activity_converter_input_title">Количество валюты</string>
+    <string name="activity_converter_currency_title">Валюта</string>
+    <string name="activity_converter_result_title">Результат</string>
+    <string name="activity_currency_list_search_title">Введите название валюты</string>
+    <string name="dialog_loading_error_positive_btn">Повторить</string>
+    <string name="dialog_loading_error_negatitive_btn">Продолжить</string>
+</resources>
